@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+{% block title %}Add User - Python Flask MySQL CRUD{% endblock %}
+{% block content %}
+
+<div class="col-8 ">
+    <h2>Add Experiment Calculation</h2>
+    <form method="post" action="/addExperiment">
+
+        <div class="mb-3">
+            <label for="exampleInputEmail1" class="form-label">Experiment Name</label>
+            <input name="inputName" value="" class="form-control" type="text"   autocomplete="off"
+                required>
+
+        </div>
+        <div class="mb-3">
+            <label for="exampleInputEmail1" class="form-label">Experiment Calculated Value</label>
+            <input name="inputCalculatedValue" value="{{ hello }}" class="form-control" type="text"   autocomplete="off"
+                required>
+
+        </div>
+        <div class="mb-3">
+            <label for="exampleInputEmail1" class="form-label"> Experiment Date</label>
+            <input name="inputExperimentDate" value="" class="form-control" type="datetime-local"  
+                autocomplete="off" required>
+        </div>
+
+        <input type="submit" class="btn btn-primary" value="Submit">
+        </p>
+    </form>
+</div>
+{% endblock %}

@@ -1,0 +1,37 @@
+{% extends "base.html" %}
+{% block title %}Edit User - Python Flask MySQL CRUD{% endblock %}
+{% block content %}
+
+<div class="col-8 ">
+    <h2>Edit Experiment Calculations</h2> 
+        <form method="post" action="/updateExperiment">
+            
+
+                <div class="mb-3">
+                    <label for="exampleInputEmail1" class="form-label">Experiment Name</label>
+                    <input name="inputName" value="{{ row['name'] }}" type="text" class="form-control"
+                        placeholder="Name" autocomplete="off" required>
+                </div>
+                <div class="mb-3">
+                    <label for="exampleInputEmail1" class="form-label">Experiment Calculated Value</label>
+                    <input name="inputCalculatedValue" value="{{ row['calculated_value'] }}" type="text" class="form-control"
+                        placeholder="Experiment Calculated Value" autocomplete="off" required>
+
+                </div>
+
+                <div class="mb-3">
+                    <label for="exampleInputEmail1" class="form-label">Experiment Date</label>
+                    <input name="inputExperimentDate" value="{{ row['experiment_date'] }}" type="datetime" placeholder="Experiment Date" class="form-control"
+                        autocomplete="off" required>
+
+                </div>
+                <input name="id" value="{{ row['experiment_id'] }}" type="hidden">
+                <input type="submit" class="btn btn-primary" value="Submit">
+
+             
+        </form>
+     
+</div>
+
+
+{% endblock %}

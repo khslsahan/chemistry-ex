@@ -1,0 +1,37 @@
+{% extends "base.html" %}
+{% block title %}Add User - Python Flask MySQL CRUD{% endblock %}
+{% block content %}
+
+<div class="col-8 ">
+    <h2>TLC Calculation</h2>
+    <form method="post" action="/tlc_calucation">
+
+        <div class="mb-3">
+            <label for="exampleInputEmail1" class="form-label">Distance travelled by solvent front (a)</label>
+            <input name="a_val" value="" class="form-control" type="text"   autocomplete="off"
+                required>
+
+        </div>
+        <div class="mb-3">
+            <label for="exampleInputEmail1" class="form-label">Distance travelled by component (r)</label>
+            <input name="r_val" value="" class="form-control" type="text"   autocomplete="off"
+                required>
+        </div>
+        <input type="submit" class="btn btn-primary" name="calculate" value="Calucalate">
+       
+        {% if rf_value != "" %}
+            <div class="mb-3 mt-4">
+            <label for="exampleInputEmail1" class="form-label"> The Rf value according to the compound is: <br>   <h1> {{rf_value}}</h1></label>
+            <!-- <span class="text-info small"> Copy the value before you save </span> -->
+            </div>
+            <a class=" btn btn-primary"   href="{{ url_for('.view_calculate_experiment') }}" >clear</a>
+            <a class=" btn btn-primary"   href="{{ url_for('.add_experiment_view_caculated',value=rf_value) }}" >save</a>
+        
+        {% endif %}
+            
+            
+               
+        
+    </form>
+</div>
+{% endblock %}
